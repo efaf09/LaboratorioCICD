@@ -12,7 +12,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t efaf09/labjenkins:$BUILD_NUMBER .'
+                sh 'docker build -t efaf09/labjenkins:latest .'
             }
         }
         stage('login to dockerhub') {
@@ -22,10 +22,10 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push efaf09/labjenkins:$BUILD_NUMBER'
+                sh 'docker push efaf09/labjenkins:latest'
             }
         }
-}
+    }
 post {
         always {
             sh 'docker logout'
