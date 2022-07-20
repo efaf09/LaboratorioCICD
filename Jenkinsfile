@@ -6,7 +6,7 @@ pipeline {
     stages { 
         stage('GIT') {
             steps{
-            git 'https://github.com/efaf09/LaboratorioCICD.git'
+            git branch: 'main', url: 'https://github.com/efaf09/LaboratorioCICD.git'
             }
         }
 
